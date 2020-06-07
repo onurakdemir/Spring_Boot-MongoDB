@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "46799b5b-d997-47f1-b4f8-0986306d25e3",
+		"name": "SweagleV2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sendMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"receiverId\":\"5edd063d4938143ad5d51bb5\",\n\t\"subject\":\"Hallo\",\n\t\"content\":\"This is a reminder message for your payments\",\n\t\"date\": \"2020-04-10\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/:userid/messages",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userid",
+						"messages"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "5edd063d4938143ad5d51bb4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSentMessages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/:id/messages?type=sent",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":id",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "sent"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5edd063d4938143ad5d51bb4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRecievedMessages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/:id/messages?type=received",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":id",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "received"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5edd063d4938143ad5d51bb5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMessageDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/messages/:msgId",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"messages",
+						":msgId"
+					],
+					"variable": [
+						{
+							"key": "msgId",
+							"value": "5edd06714938143ad5d51bb6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predictWeekLoad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/predict?type=WEEK",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"predict"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "WEEK"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predictDayLoad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/predict?type=DAY",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"predict"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "DAY"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
